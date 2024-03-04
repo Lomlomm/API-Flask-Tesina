@@ -1,6 +1,6 @@
 from flask import Flask
 import services.processed_data as ProcessData
-
+import model.svm_model as SVModel
 app = Flask(__name__)
 
 
@@ -11,6 +11,10 @@ def home():
 @app.route('/processData', methods=['GET'])
 def getProcessData():
     return ProcessData.getProcessData()
+
+@app.route('/modelSVM', methods=['GET'])
+def getProcessData():
+    return SVModel.main()
 
 if __name__ == '__main__':
     app.run(debug=True)
