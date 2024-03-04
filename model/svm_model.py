@@ -45,7 +45,7 @@ def main():
 
     # Paso 6: Evaluar la precisión del modelo
     accuracy = accuracy_score(y_test, y_pred)
-    print(accuracy)
+    print(y_pred)
 
     return jsonify(y_pred)
     

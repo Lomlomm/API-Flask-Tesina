@@ -1,6 +1,7 @@
 from flask import Flask
 import services.processed_data as ProcessData
 import model.svm_model as SVModel
+
 app = Flask(__name__)
 
 
