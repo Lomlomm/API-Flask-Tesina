@@ -13,9 +13,9 @@ def home():
 def getProcessData():
     return ProcessData.getProcessData()
 
-# @app.route('/modelSVM', methods=['GET'])
-# def modelSVM():
-#     return SVModel.main()
+@app.route('/modelSVM', methods=['GET'])
+def modelSVM():
+    return SVModel.main()
 
 if __name__ == '__main__':
     app.run(debug=True)
