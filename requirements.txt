@@ -6,7 +6,7 @@ gunicorn==21.2.0
 scikit-learn==1.4.1.post1
 supabase==2.4.0
 supafunc==0.3.3
-
+matplotlib
 
 # annotated-types==0.6.0
 # anyio==4.3.0
