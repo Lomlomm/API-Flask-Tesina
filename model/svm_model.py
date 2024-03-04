@@ -27,7 +27,8 @@ def main():
 
     # Paso 6: Evaluar la precisión del modelo
     accuracy = accuracy_score(y_test, y_pred)
+    arr_list = y_pred.tolist()
     print(y_pred)
 
-    return jsonify(y_pred)
+    return jsonify(arr_list)
     
