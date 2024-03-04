@@ -1,4 +1,4 @@
-from convert_json_to_pd import Convert2DF
+from . import convert_json_to_pd
 
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
@@ -24,7 +24,7 @@ def matrix_conf(y_test, y_pred):
     plt.show()
 
 def main():
-    df_data = Convert2DF()
+    df_data = convert_json_to_pd.Convert2DF()
     
     X = df_data.iloc[:, :-1]
     Y = df_data['classification']
