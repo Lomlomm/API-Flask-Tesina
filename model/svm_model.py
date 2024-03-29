@@ -7,7 +7,6 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from scipy.linalg import eigh
-from tqdm import tqdm
 from sklearn.preprocessing import StandardScaler
 from flask import jsonify
 
