@@ -30,5 +30,4 @@ def Convert2DF():
     
     joined_df = pd.concat(join_data, ignore_index=True)
 
-    joined_df = ConvertTags2Float(joined_df)
     return joined_df

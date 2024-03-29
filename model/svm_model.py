@@ -1,4 +1,4 @@
-from . import convert_json_to_pd
+import convert_json_to_pd
 
 import numpy as np
 import pandas as pd
@@ -100,3 +100,5 @@ def main():
     arr_list = y_pred.tolist()
     #return jsonify(arr_list)
     
+if __name__ == '__main__':
+    main()
