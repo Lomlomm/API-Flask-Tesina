@@ -63,7 +63,7 @@ def apply_csp_projection(X, w):
     X_csp = np.dot(X, w)
     return X_csp
 
-if __name__ == '__main__':
+def main():
         # Cargar los datos
     df_data = convert_json_to_pd.Convert2DF()
     
