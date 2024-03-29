@@ -98,7 +98,7 @@ def main():
     print(classification_report(y_test, y_pred))
 
     arr_list = y_pred.tolist()
-    #return jsonify(arr_list)
+    return jsonify(arr_list)
     
 if __name__ == '__main__':
     main()
