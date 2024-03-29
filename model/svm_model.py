@@ -98,6 +98,9 @@ def main():
     print(classification_report(y_test, y_pred))
 
     arr_list = y_pred.tolist()
+    print('Cantidad de 2 (derecha): ' + arr_list.count(2))
+    print('Cantidad de 0 (izquierda): ' + arr_list.count(0))
+
     return jsonify(arr_list)
     
 if __name__ == '__main__':
