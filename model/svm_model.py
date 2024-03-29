@@ -42,7 +42,7 @@ def compute_covariance_matrices(X, y):
 def compute_csp_projection(cov_matrices):
     # Calcular las proyecciones de CSP
     num_channels = cov_matrices[0].shape[0]
-    num_csp_components = 10  # Seleccionar el número de componentes CSP
+    num_csp_components = 8 # Seleccionar el número de componentes CSP
 
     # Calcular la matriz de covarianza promedio
     avg_cov_matrix = sum(cov_matrices) / len(cov_matrices)
@@ -65,8 +65,8 @@ def apply_csp_projection(X, w):
     X_csp = np.dot(X, w)
     return X_csp
 
-def main():
-    # Cargar los datos
+if __name__ == '__main__':
+        # Cargar los datos
     file_path = './API_ML/API/app/model/data/cube_data/Processed/concatenated_data.csv'
     X, y = load_data(file_path)
 
@@ -88,8 +88,8 @@ def main():
     # Aplicar el mismo escalado a los datos de prueba
     X_test_scaled = scaler.transform(X_test)
 
-    # Entrenar una Máquina de Soporte Vectorial (SVM)
-    svm_classifier = SVC(kernel='rbf', C=2, gamma=1.5)
+    # Entrenar una Máquina de Soporte Vectorial (SVM) 
+    svm_classifier = SVC(kernel='rbf', C=2, gamma=1.075)
     svm_classifier.fit(X_train_scaled, y_train)
 
     # Realizar predicciones
@@ -99,5 +99,5 @@ def main():
     print(classification_report(y_test, y_pred))
 
     arr_list = y_pred.tolist()
-    return jsonify(arr_list)
+    #return jsonify(arr_list)
     
