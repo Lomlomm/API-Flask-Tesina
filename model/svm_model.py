@@ -1,4 +1,4 @@
-import convert_json_to_pd
+from . import convert_json_to_pd
 
 import numpy as np
 import pandas as pd
