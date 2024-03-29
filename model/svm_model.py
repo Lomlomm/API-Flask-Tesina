@@ -33,7 +33,7 @@ def compute_covariance_matrices(X, y):
         class_indices = np.where(y == class_label)[0]
         class_data = X[class_indices]
         cov_matrices.append(np.cov(class_data.T))
-
+    print(cov_matrices)
     return cov_matrices
 
 
