@@ -1,5 +1,5 @@
 from flask import jsonify
-from . import supabase_api
+import supabase_api
 
 
 def getProcessData():

@@ -82,7 +82,7 @@ if __name__ == '__main__':
     X_train, X_test, y_train, y_test = train_test_split(X_csp, y, test_size=0.2, random_state=42)
     # Inicializar un objeto de escalado
     scaler = StandardScaler()
-    # Ajustar el escalador a tus datos de entrenamiento y transformar los datos
+    # Ajustar el escalador a tus datos de entrenamiento y transdformar los datos
     X_train_scaled = scaler.fit_transform(X_train)
 
     # Aplicar el mismo escalado a los datos de prueba
