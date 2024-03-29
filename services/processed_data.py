@@ -10,7 +10,7 @@ def getProcessData():
         # third_test = supabase.table('third-test').select('*').execute().data
         # fourth_test = supabase.table('fourth-test').select('*').execute().data
         # fifth_test = supabase.table('fifth-test').select('*').execute().data
-        concatenated_data = supabase.table('concatenated-data').execute().data
+        concatenated_data = supabase.table('concatenated-data').select('*').execute().data
 
         status = 200
         message = 'Data fetch successfully'
