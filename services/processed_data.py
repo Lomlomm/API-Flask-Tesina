@@ -1,5 +1,5 @@
 from flask import jsonify
-from . import supabase_api
+import supabase_api
 
 
 def getProcessData():
@@ -28,3 +28,6 @@ def getProcessData():
         'message': message, 
         'response': response
     })
+
+if __name__ == '__main__':
+    getProcessData()

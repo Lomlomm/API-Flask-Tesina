@@ -66,7 +66,7 @@ def apply_csp_projection(X, w):
 def main():
         # Cargar los datos
     df_data = convert_json_to_pd.Convert2DF()
-    
+    print(df_data)
     X, y = load_data(df_data)
 
     # Calcular las matrices de covarianza para cada clase
