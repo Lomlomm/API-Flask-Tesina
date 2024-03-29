@@ -11,9 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from flask import jsonify
 
 
-def load_data(file_path):
-    # Cargar los datos desde el archivo CSV
-    data = pd.read_csv(file_path)
+def load_data(data):
     # Separar características y etiquetas
     X = data.drop(columns=['Classification', 'Time:512Hz']).values
     y = data['Classification'].values
@@ -67,8 +65,9 @@ def apply_csp_projection(X, w):
 
 if __name__ == '__main__':
         # Cargar los datos
-    file_path = './API_ML/API/app/model/data/cube_data/Processed/concatenated_data.csv'
-    X, y = load_data(file_path)
+    df_data = convert_json_to_pd.Convert2DF()
+    
+    X, y = load_data(df_data)
 
     # Calcular las matrices de covarianza para cada clase
     cov_matrices = compute_covariance_matrices(X, y)
