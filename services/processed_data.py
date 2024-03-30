@@ -11,11 +11,14 @@ def getProcessData():
         # fourth_test = supabase.table('fourth-test').select('*').execute().data
         # fifth_test = supabase.table('fifth-test').select('*').execute().data
         concatenated_data = supabase.table('concatenated-data').select('*').execute().data
+        prueba_3 = supabase.table('prueba-3').select('*').execute().data
+
 
         status = 200
         message = 'Data fetch successfully'
         response = {
             'concatenated-data': concatenated_data, 
+            'prueba-3': prueba_3
         }
 
     except Exception as e: 

@@ -18,6 +18,7 @@ def Convert2DF():
     response_data = data['response']
 
     df = pd.json_normalize(response_data)
+    print(df)
     all_data = []
     for column in df.columns: 
         all_data.append( pd.json_normalize(df[column].T ))
