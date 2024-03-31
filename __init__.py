@@ -13,6 +13,11 @@ def home():
 def getProcessData():
     return ProcessData.getProcessData()
 
+@app.route('/getEvaluationData', methods=['GET'])
+def getEvaluationData():
+    return ProcessData.getEvaluationData()
+
+
 @app.route('/modelSVM', methods=['GET'])
 def modelSVM():
     return SVModel.main()

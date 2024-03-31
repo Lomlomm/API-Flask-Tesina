@@ -65,9 +65,14 @@ def apply_csp_projection(X, w):
 
 def main():
         # Cargar los datos
-    df_data = convert_json_to_pd.Convert2DF()
-    print(df_data)
-    X, y = load_data(df_data)
+    df_training_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/processData')
+    df_evaluation_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/evaluationData')
+
+    print(df_training_data) 
+    X, y = load_data(df_training_data)
+
+    X_evaluation, y_evaluation = load_data(df_evaluation_data)
+
 
     # Calcular las matrices de covarianza para cada clase
     cov_matrices = compute_covariance_matrices(X, y)
@@ -76,6 +81,10 @@ def main():
     # Aplicar la proyección CSP a los datos
     X_csp = apply_csp_projection(X, w)
 
+    cov_matrices_evaluation = compute_covariance_matrices(X_evaluation, y_evaluation)
+    w_evaluation = compute_csp_projection(cov_matrices_evaluation)
+    X_csp_evaluation = apply_csp_projection(X_evaluation, w_evaluation)
+    X_evaluation_scaled = scaler.transform(X_csp_evaluation)
 
     # Dividir los datos en conjunto de entrenamiento y prueba
     X_train, X_test, y_train, y_test = train_test_split(X_csp, y, test_size=0.2, random_state=42)
@@ -92,7 +101,8 @@ def main():
     svm_classifier.fit(X_train_scaled, y_train)
 
     # Realizar predicciones
-    y_pred = svm_classifier.predict(X_test_scaled)
+    #y_pred = svm_classifier.predict(X_test_scaled)
+    y_pred = svm_classifier.predict(X_evaluation_scaled)
 
     # Imprimir el reporte de clasificación
     print(classification_report(y_test, y_pred))

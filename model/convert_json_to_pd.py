@@ -11,8 +11,8 @@ def ConvertTags2Float(df):
     return df
 
 
-def Convert2DF():
-    url = 'https://api-flask-tesina-2745b2978945.herokuapp.com/processData'
+def Convert2DF(url:str):
+    
     response = requests.get(url)
     data = response.json()
     response_data = data['response']
