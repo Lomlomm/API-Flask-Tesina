@@ -64,7 +64,9 @@ def apply_csp_projection(X, w):
     return X_csp
 
 def main():
-        # Cargar los datos
+    # Inicializar un objeto de escalado
+    scaler = StandardScaler()
+    # Cargar los datos
     df_training_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/processData')
     df_evaluation_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/getEvaluationData')
 
@@ -87,8 +89,7 @@ def main():
 
     # Dividir los datos en conjunto de entrenamiento y prueba
     X_train, X_test, y_train, y_test = train_test_split(X_csp, y, test_size=0.2, random_state=42)
-    # Inicializar un objeto de escalado
-    scaler = StandardScaler()
+    
     # Ajustar el escalador a tus datos de entrenamiento y transformar los datos
     X_train_scaled = scaler.fit_transform(X_train)
 
