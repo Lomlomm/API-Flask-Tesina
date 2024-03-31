@@ -68,7 +68,6 @@ def main():
     df_training_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/processData')
     df_evaluation_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/evaluationData')
 
-    print(df_training_data) 
     X, y = load_data(df_training_data)
 
     X_evaluation, y_evaluation = load_data(df_evaluation_data)
