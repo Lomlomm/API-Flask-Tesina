@@ -66,7 +66,7 @@ def apply_csp_projection(X, w):
 def main():
         # Cargar los datos
     df_training_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/processData')
-    df_evaluation_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/evaluationData')
+    df_evaluation_data = convert_json_to_pd.Convert2DF('https://api-flask-tesina-2745b2978945.herokuapp.com/getEvaluationData')
 
     X, y = load_data(df_training_data)
 
