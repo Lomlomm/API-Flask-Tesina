@@ -16,7 +16,7 @@ def Convert2DF(url:str):
     response = requests.get(url)
     data = response.json()
     response_data = data['response']
-
+    print(response_data)
     df = pd.json_normalize(response_data)
     print(df)
     all_data = []

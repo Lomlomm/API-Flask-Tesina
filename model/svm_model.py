@@ -20,7 +20,6 @@ def load_data(data):
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
     mapping = {original_label: encoded_value for original_label, encoded_value in zip(y, y_encoded)}
-    print(mapping)
     return X, y_encoded
 
 
@@ -33,7 +32,6 @@ def compute_covariance_matrices(X, y):
         class_indices = np.where(y == class_label)[0]
         class_data = X[class_indices]
         cov_matrices.append(np.cov(class_data.T))
-    print(cov_matrices)
     return cov_matrices
 
 
