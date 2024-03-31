@@ -85,6 +85,7 @@ def main():
     cov_matrices_evaluation = compute_covariance_matrices(X_evaluation, y_evaluation)
     w_evaluation = compute_csp_projection(cov_matrices_evaluation)
     X_csp_evaluation = apply_csp_projection(X_evaluation, w_evaluation)
+    X_evaluation_scaled_fit = scaler.fit_transform(X_csp_evaluation)
     X_evaluation_scaled = scaler.transform(X_csp_evaluation)
 
     # Dividir los datos en conjunto de entrenamiento y prueba
